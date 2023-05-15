@@ -30,4 +30,24 @@ describe(" Get /reservations", () => {
     expect(response.status).toBe(expectedStatus);
     expect(response.body).toEqual(expectedReservationList);
   });
+
+  it("should return GET/ reservations/614abf0a93e8e80ace792ac6", async () => {
+    // Arrange
+    const expectedStatus = 200;
+    const expectedSingleReservation = {
+      id: "614abf0a93e8e80ace792ac6",
+      partySize: 2,
+      date: "2023-12-03T07:00:00.000Z",
+      userId: "614abe145f317b89a2e36883",
+      restaurantName: "Green Curry",
+    };
+    // Act
+    const id = "614abf0a93e8e80ace792ac6";
+    const response = await request(app).get(`/reservations/${id}`);
+
+    // Actions
+
+    expect(response.status).toBe(expectedStatus);
+    expect(response.body).toEqual(expectedSingleReservation);
+  });
 });
