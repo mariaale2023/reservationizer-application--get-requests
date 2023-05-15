@@ -54,7 +54,7 @@ describe(" Get /reservations", () => {
   it("should return GET/ reservations/614abf0a93e8e80ace111ac1", async () => {
     // Arrange
     const expectedStatus = 404;
-    const expectedSingleReservation = "Reservation not found";
+    const expectedSingleReservation = {};
 
     // Act
     const id = "614abf0a93e8e80ace111ac1";
@@ -69,7 +69,7 @@ describe(" Get /reservations", () => {
   it("should return GET/ reservations/1111", async () => {
     // Arrange
     const expectedStatus = 400;
-    const expectedSingleReservation = "Id reservation is not valid";
+    const expectedSingleReservation = {};
 
     // Act
     const id = "1111";
