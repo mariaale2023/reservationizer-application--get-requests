@@ -14,20 +14,28 @@ app.get("/reservations", async (request, response) => {
     return formatResevationId(reservation);
   });
 
-  response.send(formattedReservation);
+  response.json(formattedReservation);
 });
 
 app.get("/reservations/:id", async (request, response) => {
   const { id } = request.params;
+  const isValidId = validId(id);
+
+  // Find the reservation with the given id
   const singleReservation = await reservationModel.findById(id).lean();
   const formattedReservation = formatResevationId(singleReservation);
-  response.send(formattedReservation);
-  if (validId === true && !singleReservation) {
+
+  // If the reservation is not found, return 404 status code
+  if (!singleReservation) {
     return response.status(404).send("Reservation not found");
-  } else if (validId === false) {
+
+    // Check if id is valid
+  } else if (!isValidId) {
     return response.status(400).send("Id reservation is not valid");
+
+    // Format the reservation object and send it in the response
   } else {
-    return response.json(singleReservation);
+    response.send(formattedReservation);
   }
 });
 
