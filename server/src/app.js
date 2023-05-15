@@ -9,12 +9,15 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/reservations", async (request, response) => {
-  const reservations = await reservationModel.find({}).lean();
-  const formattedReservation = reservations.map((reservation) => {
-    return formatReservationId(reservation);
-  });
+  // const reservations = await reservationModel.find({}).lean();
+  // const formattedReservation = reservations.map((reservation) => {
+  //   return formatReservationId(reservation);
+  // });
 
-  response.send(formattedReservation);
+  // response.send(formattedReservation);
+
+  const reservations = await reservationModel.find({});
+  response.send(reservations);
 });
 
 app.get("/reservations/:id", async (request, response) => {
@@ -22,8 +25,10 @@ app.get("/reservations/:id", async (request, response) => {
   const isValidId = validId(id);
 
   // Find the reservation with the given id
-  const singleReservation = await reservationModel.findById(id).lean();
-  const formattedReservation = formatReservationId(singleReservation);
+  // const singleReservation = await reservationModel.findById(id).lean();
+  // const formattedReservation = formatReservationId(singleReservation);
+
+  const singleReservation = await reservationModel.findById(id);
 
   // If the reservation is not found, return 404 status code
   if (!singleReservation) {
@@ -35,7 +40,7 @@ app.get("/reservations/:id", async (request, response) => {
 
     // Format the reservation object and send it in the response
   } else {
-    response.json(formattedReservation);
+    response.json(singleReservation);
   }
 });
 
