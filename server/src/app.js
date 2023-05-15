@@ -35,7 +35,7 @@ app.get("/reservations/:id", async (request, response) => {
 
     // Format the reservation object and send it in the response
   } else {
-    response.send(formattedReservation);
+    response.json(formattedReservation);
   }
 });
 
