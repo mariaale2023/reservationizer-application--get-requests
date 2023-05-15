@@ -19,9 +19,16 @@ app.get("/reservations", async (request, response) => {
 
 app.get("/reservations/:id", async (request, response) => {
   const { id } = request.params;
-  const reservations = await reservationModel.findById(id).lean();
-  const formattedReservation = formatResevationId(reservations);
+  const singleReservation = await reservationModel.findById(id).lean();
+  const formattedReservation = formatResevationId(singleReservation);
   response.send(formattedReservation);
+  if (validId === true && !singleReservation) {
+    return response.status(404).send("Reservation not found");
+  } else if (validId === false) {
+    return response.status(400).send("Id reservation is not valid");
+  } else {
+    return response.json(singleReservation);
+  }
 });
 
 module.exports = app;
