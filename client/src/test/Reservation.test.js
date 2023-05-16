@@ -6,7 +6,7 @@ import timezoneMock from "timezone-mock";
 import App from "../App";
 
 const reservation = {
-  id: "507f1f77bcf86cd799439011",
+  _id: "507f1f77bcf86cd799439011",
   partySize: 4,
   date: "2023-11-17T06:30:00.000Z",
   userId: "614abe145f317b89a2e36883",
