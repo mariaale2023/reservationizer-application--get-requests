@@ -1,17 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ReservationList.css";
 import { Link } from "react-router-dom";
+import { formatDate } from "../utils/formatDate";
 
 const ReservationList = () => {
+  const [reservations, setReservations] = useState([]);
+
+  useEffect(() => {
+    // declare the data fetching function
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5001/reservations");
+      const data = await response.json();
+      setReservations(data);
+    };
+
+    // call the function
+    fetchData();
+    // make sure to catch any error
+    // .catch(console.error);
+  }, []);
   return (
     <>
       <h1>Upcoming reservations</h1>
-      <ul>
-        <li>
-          <h2>Name Restaurant</h2>
-          <p>6:30am Fri 17 Nov, 2023</p>
-          <Link>View detail</Link>
-        </li>
+      <ul className="grid">
+        {reservations.map((reservation) => (
+          <li className="reservation-single" key={reservation._id.$oid}>
+            <h2>{reservation.restaurantName}</h2>
+            <p>{formatDate(reservation.date)}</p>
+            <Link to={`/reservations/${reservation._id.$oid}`}>
+              View detail
+            </Link>
+          </li>
+        ))}
       </ul>
     </>
   );
