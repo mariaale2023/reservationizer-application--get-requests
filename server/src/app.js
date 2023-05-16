@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const validId = require("./utils/validId");
-const formatReservationId = require("./utils/formatReservationId");
 const reservationModel = require("./models/ReservationModel");
 
 app.use(cors());
@@ -22,22 +21,23 @@ app.get("/reservations", async (request, response) => {
 
 app.get("/reservations/:id", async (request, response) => {
   const id = request.params.id;
-  // const isValidId = validId(id);
+  const isValidId = validId(id);
 
   // Find the reservation with the given id
   // const singleReservation = await reservationModel.findById(id).lean();
   // const formattedReservation = formatReservationId(singleReservation);
 
-  if (!validId(id)) {
+  // Check if id is valid
+
+  if (!isValidId) {
     return response.status(400).send("Id reservation is not valid");
   }
-  const singleReservation = await reservationModel.findById(id);
 
   // If the reservation is not found, return 404 status code
+  const singleReservation = await reservationModel.findById(id);
   if (!singleReservation) {
     return response.status(404).send("Reservation not found");
   }
-  // Check if id is valid
 
   // Format the reservation object and send it in the response
   response.json(singleReservation);
