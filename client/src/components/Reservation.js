@@ -42,6 +42,17 @@ const Reservation = () => {
 
   return (
     <>
+      <div>
+        <ul className="grid">
+          {reservation.filter((reservation) => (
+            <li className="" key={reservation._id}>
+              <h2>{reservation.restaurantName}</h2>
+              <p>{formatDate(reservation.date)}</p>
+              <p>{reservation.partySize}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <BackButton />
     </>
   );
