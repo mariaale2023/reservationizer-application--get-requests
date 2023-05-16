@@ -24,12 +24,10 @@ const ReservationList = () => {
       <h1>Upcoming reservations</h1>
       <ul className="grid">
         {reservations.map((reservation) => (
-          <li className="reservation-single" key={reservation._id.$oid}>
+          <li className="reservation-single" key={reservation._id}>
             <h2>{reservation.restaurantName}</h2>
             <p>{formatDate(reservation.date)}</p>
-            <Link to={`/reservations/${reservation._id.$oid}`}>
-              View detail
-            </Link>
+            <Link to={`/reservations/${reservation._id}`}>View detail</Link>
           </li>
         ))}
       </ul>
