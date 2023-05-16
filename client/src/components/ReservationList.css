@@ -1,5 +1,5 @@
 .reservation-single {
-  background-color: #f1d9ce;
+  /* background-color: #f1d9ce; */
   border-radius: 1rem;
 }
 
@@ -13,7 +13,7 @@ ul {
   gap: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 48rem) {
   .reservation-single {
     display: flex;
     justify-content: center;
