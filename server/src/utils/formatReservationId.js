@@ -1,4 +1,8 @@
 const formatReservationId = (reservation) => {
+  if (!reservation) {
+    return null; // Or handle the case in an appropriate way
+  }
+
   return {
     id: reservation._id,
     partySize: reservation.partySize,
@@ -7,10 +11,5 @@ const formatReservationId = (reservation) => {
     restaurantName: reservation.restaurantName,
   };
 };
-
-//   { _id: id, ...reservation }) => ({
-//   id,
-//   ...reservation,
-// }
 
 module.exports = formatReservationId;
