@@ -25,8 +25,7 @@ describe(" Get /reservations", () => {
 
     const response = await request(app).get("/reservations");
 
-    // Actions
-
+    // Assert
     expect(response.status).toBe(expectedStatus);
     expect(response.body).toEqual(expectedReservationList);
   });
@@ -45,8 +44,7 @@ describe(" Get /reservations", () => {
     const id = "614abf0a93e8e80ace792ac6";
     const response = await request(app).get(`/reservations/${id}`);
 
-    // Actions
-
+    // Assert
     expect(response.status).toBe(expectedStatus);
     expect(response.body).toEqual(expectedSingleReservation);
   });
@@ -60,8 +58,7 @@ describe(" Get /reservations", () => {
     const id = "614abf0a93e8e80ace111ac1";
     const response = await request(app).get(`/reservations/${id}`);
 
-    // Actions
-
+    // Assert
     expect(response.status).toBe(expectedStatus);
     expect(response.body).toEqual(expectedSingleReservation);
   });
@@ -75,8 +72,7 @@ describe(" Get /reservations", () => {
     const id = "1111";
     const response = await request(app).get(`/reservations/${id}`);
 
-    // Actions
-
+    // Assert
     expect(response.status).toBe(expectedStatus);
     expect(response.body).toEqual(expectedSingleReservation);
   });

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import BackButton from "./BackButton";
 
 const NotFound = () => {

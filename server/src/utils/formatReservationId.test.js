@@ -10,8 +10,7 @@ const reservationFromMongoose = {
 
 describe("formatReservationId", () => {
   it("Should change _id to id", () => {
-    const received = formatReservationId(reservationFromMongoose);
-
+    // Arrange
     const expectedOutput = {
       id: "507f1f77bcf86cd799439011",
       partySize: 4,
@@ -20,6 +19,10 @@ describe("formatReservationId", () => {
       restaurantName: "Island Grill",
     };
 
+    // Act
+    const received = formatReservationId(reservationFromMongoose);
+
+    // Assert
     expect(received).toEqual(expectedOutput);
   });
 });
