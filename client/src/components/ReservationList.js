@@ -27,7 +27,7 @@ const ReservationList = () => {
           <li className="reservation-single" key={reservation._id}>
             <h2>{reservation.restaurantName}</h2>
             <p>{formatDate(reservation.date)}</p>
-            <Link to={`/reservations/${reservation._id}`}>View detail</Link>
+            <Link to={`/reservations/${reservation.id}`}>View detail</Link>
           </li>
         ))}
       </ul>
