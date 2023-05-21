@@ -9,7 +9,9 @@ const ReservationList = () => {
   useEffect(() => {
     // declare the data fetching function
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5001/reservations");
+      const endpoint = process.env.REACT_APP_API_ENDPOINT || "http://localhost:5001";
+      const response = await fetch(`${endpoint}/reservations`);
+      // const response = await fetch("http://localhost:5001/reservations");
       const data = await response.json();
       setReservations(data);
     };
