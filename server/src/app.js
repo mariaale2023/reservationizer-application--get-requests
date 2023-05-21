@@ -8,6 +8,7 @@ const formatReservationId = require("./utils/formatReservationId");
 app.use(cors());
 app.use(express.json());
 
+
 app.get("/reservations", async (request, response) => {
   // const reservations = await reservationModel.find({}).lean();
   // const formattedReservation = reservations.map((reservation) => {
