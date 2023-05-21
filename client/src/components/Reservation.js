@@ -12,10 +12,10 @@ const Reservation = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const endpoint =
-      //   process.env.REACT_APP_API_ENDPOINT || "http://localhost:5001";
-      // const response = await fetch(`${endpoint}/reservations/${id}`);
-      const response = await fetch(`http://localhost:5001/reservations/${id}`);
+      const endpoint =
+        process.env.REACT_APP_API_ENDPOINT || "http://localhost:5001";
+      const response = await fetch(`${endpoint}/reservations/${id}`);
+      // const response = await fetch(`http://localhost:5001/reservations/${id}`);
 
       if (response.ok === false) {
         setIsNotFound(true);
