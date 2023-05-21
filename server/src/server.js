@@ -1,5 +1,5 @@
 const port = process.env.PORT || 5001;
-const connectionURI = process.env.DATABASE_URI || "mongodb://[::1]:27017/mongo";
+const connectionURI = process.env.DATABASE_URI;
 const app = require("./app");
 
 const mongoose = require("mongoose");
