@@ -5,3 +5,5 @@ const validId = (id) => {
 };
 
 module.exports = validId;
+
+// https://stackoverflow.com/questions/13850819/can-i-determine-if-a-string-is-a-mongodb-objectid
