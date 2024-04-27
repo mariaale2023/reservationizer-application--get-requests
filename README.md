@@ -1,11 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11146003&assignment_repo_type=AssignmentRepo)
-# 02 Project - Reservationizr Application - Get requests
-
-## Assessment details
-
-- Assesment details are on iQualify classroom
-
----
+# Project - Reservationizr Application - Get requests
 
 # Scenario
 
@@ -102,8 +95,7 @@ Request: `GET /reservations/614abf0a93e8e80ace792ac6`
 
 ---
 
-**Condition** : If Reservation does not exist with `id` parameter.
-
+**Condition**
 **Code** : `404 NOT FOUND`
 
 **Content** : `{ message: "id not found"}`
@@ -126,7 +118,8 @@ The `client` folder contains the React Application, and the `server` folder cont
 
 ### MongoDB Database
 
-- Start MongoDB in Docker by opening a terminal and `copy & paste` in the following: 
+- Start MongoDB in Docker by opening a terminal and `copy & paste` in the following:
+
 ```shell
 docker run --name 02-project---reservationizer-application---get-requests \
 -p 27017:27017 \
@@ -134,6 +127,7 @@ docker run --name 02-project---reservationizer-application---get-requests \
 -d \
 mongo
 ```
+
 - Connect to MongoDB using [MongoDB Compass](https://www.mongodb.com/products/compass). Create a database named `mongo`, and load data from the [data](./data) folder into the database.
 
 ### Understand what already exists
@@ -147,8 +141,6 @@ Once you have everything up and running and have familiarised yourself with the 
 The previous developer also created a test plan, make a copy of it with the link below and ensure to add to it as you continue development.
 
 [Reservationizr Test Plan](https://docs.google.com/spreadsheets/d/1duZOwvv4I_EyF1YLPRxexHSYeBVzrprhsYqgLOaB9Ls/copy)
-
-
 
 ---
 
