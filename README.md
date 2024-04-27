@@ -1,5 +1,9 @@
 # Project - Reservationizr Application - Get requests
 
+As part of my full-stack developer program at Developers Institute, this project's main goal was to display a list of reservations using GET requests and integrating with a MongoDB database.
+
+The Reservationizr startup consolidates local restaurant reservations. Phase one is to display reservations via a React Application. I am to complete the project following the given documentation, with support from the Tech Lead as needed.
+
 # Scenario
 
 You are working for a new startup, Reservationizr. It allows customers to make reservations at any of their local restaurants from one place.
@@ -147,7 +151,7 @@ The previous developer also created a test plan, make a copy of it with the link
 ## User Story #1 - View all reservations
 
 - **As a** restaurant connoisseur
-- **I want** to see an overview of my restaurant reservations
+- **I want** to see an overview of my restaurant reservationsz
 - **So that** I can plan my week
 
 **Acceptance criteria**
